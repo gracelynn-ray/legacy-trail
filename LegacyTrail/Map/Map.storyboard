@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MapVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" title="MapVC" id="Y6W-OH-hqX" customClass="MapVC" customModule="LegacyTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-S1-Q24">
+                                <rect key="frame" x="175" y="213" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpm-Qb-xOu">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3s-cL-sRo">
+                                <rect key="frame" x="10" y="70" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Otu-WP-Hz1"/>
+                                    <constraint firstAttribute="width" constant="40" id="ue2-8f-AUY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="location" catalog="system">
+                                    <color key="baseForegroundColor" red="0.55661177640000004" green="0.55814772840000004" blue="0.57713150980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.1080036387" green="0.1088442579" blue="0.1189960316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="centerMapOnUserLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MEO-5w-eDH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qpm-Qb-xOu" secondAttribute="bottom" id="Jov-VQ-VCz"/>
+                            <constraint firstItem="qpm-Qb-xOu" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="WqU-SL-eOs"/>
+                            <constraint firstItem="qpm-Qb-xOu" firstAttribute="top" secondItem="j3s-cL-sRo" secondAttribute="bottom" constant="-110" id="eqy-eD-kVy"/>
+                            <constraint firstItem="j3s-cL-sRo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="ftd-fW-17o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qpm-Qb-xOu" secondAttribute="trailing" id="ggF-Cy-jnc"/>
+                            <constraint firstItem="qpm-Qb-xOu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="osV-Ya-9ja"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="  " image="map" catalog="system" id="Hvf-Zk-c4J"/>
+                    <navigationItem key="navigationItem" id="XmG-lh-Me8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goToMyLocation" destination="j3s-cL-sRo" id="ZGy-k0-iAB"/>
+                        <outlet property="mapView" destination="qpm-Qb-xOu" id="0IY-lO-oEn"/>
+                        <segue destination="2aX-xS-FdQ" kind="presentation" identifier="DetailSegue" id="iLx-5W-aKN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2067.93893129771" y="17.605633802816904"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="Gqa-UZ-aqe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Memories" referencedIdentifier="Detail" id="2aX-xS-FdQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8I-Pn-85e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616" y="-46"/>
+        </scene>
+        <!--Contact Map-->
+        <scene sceneID="eig-M6-NCL">
+            <objects>
+                <viewController storyboardIdentifier="ContactMap" id="mX9-yO-Jue" customClass="ContactMap" customModule="LegacyTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NuH-Iy-gXo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x04-2y-Cx9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AF-hl-RwF">
+                                <rect key="frame" x="15" y="74" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="j5N-AK-AzH"/>
+                                    <constraint firstAttribute="width" constant="40" id="ydU-mi-dc8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="location" catalog="system">
+                                    <color key="baseForegroundColor" red="0.55661177640000004" green="0.55814772840000004" blue="0.57713150980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.1080036387" green="0.1088442579" blue="0.1189960316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="centerMapOnLocation:" destination="mX9-yO-Jue" eventType="touchUpInside" id="Eat-rj-931"/>
+                                    <action selector="centerMapOnUserLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZKH-B0-bPd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YFf-pc-Elj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x04-2y-Cx9" firstAttribute="top" secondItem="YFf-pc-Elj" secondAttribute="top" id="6cd-5d-u1l"/>
+                            <constraint firstItem="8AF-hl-RwF" firstAttribute="leading" secondItem="YFf-pc-Elj" secondAttribute="leading" constant="15" id="JMT-o3-q2U"/>
+                            <constraint firstItem="x04-2y-Cx9" firstAttribute="leading" secondItem="YFf-pc-Elj" secondAttribute="leading" id="UW1-7T-3hQ"/>
+                            <constraint firstItem="8AF-hl-RwF" firstAttribute="top" secondItem="YFf-pc-Elj" secondAttribute="top" constant="15" id="rDs-Al-ttK"/>
+                            <constraint firstItem="x04-2y-Cx9" firstAttribute="trailing" secondItem="YFf-pc-Elj" secondAttribute="trailing" id="whC-32-gPd"/>
+                            <constraint firstAttribute="bottom" secondItem="x04-2y-Cx9" secondAttribute="bottom" id="z6O-c4-BOh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goToMyLocation" destination="8AF-hl-RwF" id="Rex-e0-qmA"/>
+                        <outlet property="mapView" destination="x04-2y-Cx9" id="r0k-o8-7kV"/>
+                        <segue destination="2aX-xS-FdQ" kind="presentation" identifier="DetailSegue2" id="Ldf-Vm-7nd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WlL-4c-dPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3110.6870229007632" y="17.605633802816904"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ldf-Vm-7nd"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="location" catalog="system" width="128" height="119"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

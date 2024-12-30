@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MapVC-->
+        <scene sceneID="YdY-xX-5j4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" referencedIdentifier="MapVC" id="e3P-MP-ekT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="po8-cH-Q5W"/>
+                    <navigationItem key="navigationItem" id="uZN-O3-gdu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zQ-6V-RGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="319"/>
+        </scene>
+        <!--  -->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="CameraVC" customModule="LegacyTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6j-se-NB7">
+                                <rect key="frame" x="332" y="74" width="56" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.rotate.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="flipCameraPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bZa-gH-GmA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f73-6c-b2n">
+                                <rect key="frame" x="340" y="115" width="45" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="bolt.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="flashPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B4d-Yx-TXX"/>
+                                </connections>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3pa-Iy-NWh">
+                                <rect key="frame" x="124" y="657" width="145" height="85"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <inset key="contentEdgeInsets" minX="50" minY="50" maxX="50" maxY="50"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="updatedCircle" title="" buttonSize="small">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8TI-hd-vmD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTe-CK-gfX">
+                                <rect key="frame" x="305" y="674.33333333333337" width="72" height="50.333333333333371"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo.on.rectangle.fill" catalog="system" buttonSize="large"/>
+                                <connections>
+                                    <action selector="uploadPhotoClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uPg-a0-n73"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="f73-6c-b2n" secondAttribute="trailing" constant="8" id="DLS-Uj-xg6"/>
+                            <constraint firstItem="f73-6c-b2n" firstAttribute="top" secondItem="Z6j-se-NB7" secondAttribute="bottom" constant="6" id="LUe-a5-tfU"/>
+                            <constraint firstItem="Z6j-se-NB7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="RWj-W4-zIq"/>
+                            <constraint firstItem="oTe-CK-gfX" firstAttribute="leading" secondItem="3pa-Iy-NWh" secondAttribute="trailing" constant="36" id="TYz-oN-22G"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oTe-CK-gfX" secondAttribute="trailing" constant="16" id="Vkp-Nw-ZbP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z6j-se-NB7" secondAttribute="trailing" constant="5" id="aLM-sg-0DN"/>
+                            <constraint firstItem="f73-6c-b2n" firstAttribute="top" secondItem="Z6j-se-NB7" secondAttribute="bottom" constant="2" id="bW8-f9-wQh"/>
+                            <constraint firstItem="oTe-CK-gfX" firstAttribute="centerY" secondItem="3pa-Iy-NWh" secondAttribute="centerY" id="pxV-Tm-8Su"/>
+                            <constraint firstItem="f73-6c-b2n" firstAttribute="top" secondItem="Z6j-se-NB7" secondAttribute="bottom" constant="4" id="swe-jA-kbE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bW8-f9-wQh"/>
+                                <exclude reference="swe-jA-kbE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="  " image="camera.fill" catalog="system" id="q5X-ss-wrJ"/>
+                    <navigationItem key="navigationItem" id="Lb6-3E-T0O"/>
+                    <connections>
+                        <outlet property="shutterButton" destination="3pa-Iy-NWh" id="YWB-3f-mMf"/>
+                        <outlet property="uploadPhoto" destination="oTe-CK-gfX" id="ifo-BT-MCg"/>
+                        <segue destination="RvZ-jH-60p" kind="presentation" identifier="CreateSegue" id="Iyz-en-69p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="-2.1126760563380285"/>
+        </scene>
+        <!--profileStoryboard-->
+        <scene sceneID="txr-xV-K88">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="profileStoryboard" id="LnS-Jz-cgV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="Mr0-5N-7At"/>
+                    <navigationItem key="navigationItem" id="Z8y-lh-9Mp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stP-p6-iPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="327"/>
+        </scene>
+        <!--CreateMemory-->
+        <scene sceneID="dmZ-ot-B9s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MemoryCreation" referencedIdentifier="CreateMemory" id="RvZ-jH-60p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Klt-iy-mne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509.9236641221373" y="129.57746478873241"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="tc0-la-tIk">
+            <objects>
+                <tabBarController storyboardIdentifier="CameraVC" automaticallyAdjustsScrollViewInsets="NO" id="h7p-4R-PYe" customClass="CustomTabBarController" customModule="LegacyTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zMZ-Ze-q72"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="tt5-YT-6u3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="e3P-MP-ekT" kind="relationship" relationship="viewControllers" id="DIZ-o7-9SM"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="lVx-7P-Y7t"/>
+                        <segue destination="LnS-Jz-cgV" kind="relationship" relationship="viewControllers" id="EIV-cl-uvB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddz-Yv-vDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bolt.fill" catalog="system" width="100" height="128"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="camera.rotate.fill" catalog="system" width="128" height="93"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="photo.on.rectangle.fill" catalog="system" width="128" height="102"/>
+        <image name="updatedCircle" width="90" height="90"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
